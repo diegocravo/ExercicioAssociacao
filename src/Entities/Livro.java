@@ -1,11 +1,18 @@
 package Entities;
 
+import Index.Cadastrar;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Livro {
 
     private int codigo;
     private String titulo;
     private String ISBN;
     private Editora editora;
+
+    public static List<Livro> listaLivro = new ArrayList<Livro>();
 
     public Livro (int codigo, String titulo, String ISBN, Editora editora){
         this.codigo = codigo;
@@ -24,7 +31,6 @@ public class Livro {
                 + ", ISBN: "
                 + ISBN
                 + ", Editora: "
-                + editora.getRazaoSocial()
-                + '\n';
+                + editora.getRazaoSocial();
     }
 }

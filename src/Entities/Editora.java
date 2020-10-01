@@ -56,6 +56,7 @@ public class Editora {
                 + ", Contato: "
                 + contato
                 + ", Telefone: "
-                + telefone;
+                + telefone +
+                "\n";
     }
 }
