@@ -48,11 +48,14 @@ public class Editora {
 
     @Override
     public String toString() {
-        return "Editora{" +
-                "codigo=" + codigo +
-                ", razaoSocial='" + razaoSocial + '\'' +
-                ", contato='" + contato + '\'' +
-                ", telefone='" + telefone + '\'' +
-                '}';
+        return "Editora: \n"
+                + "codigo: "
+                + codigo
+                + ", Razão Social: "
+                + razaoSocial
+                + ", Contato: "
+                + contato
+                + ", Telefone: "
+                + telefone;
     }
 }

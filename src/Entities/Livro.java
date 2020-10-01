@@ -16,14 +16,14 @@ public class Livro {
 
     @Override
     public String toString() {
-        return "Livro:"
-                + "codigo: "
+        return "Livro: \n"
+                + "Código: "
                 + codigo
-                + ", titulo: "
+                + ", Título: "
                 + titulo
                 + ", ISBN: "
                 + ISBN
-                + ", editora: "
+                + ", Editora: "
                 + editora.getRazaoSocial()
                 + '\n';
     }
