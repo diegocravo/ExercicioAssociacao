@@ -1,7 +1,5 @@
 package Entities;
 
-import Index.Cadastrar;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +9,7 @@ public class Livro {
     private String titulo;
     private String ISBN;
     private Editora editora;
+    private static List<Autor> autores = new ArrayList<>();
 
     public static List<Livro> listaLivro = new ArrayList<Livro>();
 
@@ -21,16 +20,31 @@ public class Livro {
         this.editora = editora;
     }
 
+    public static void adicionarAutores(Autor autor){
+        autores.add(autor);
+    }
+
+    public String returnAutores() {
+        String resultadoAutores = "";
+        for (int x = 0; x < autores.size(); x++){
+            resultadoAutores += ("\n" + autores.get(x).getNome());
+        }
+        return resultadoAutores;
+    }
+
     @Override
     public String toString() {
-        return "Livro: \n"
-                + "Código: "
-                + codigo
-                + ", Título: "
+        return "Detalhes Livro:"
+                + "\nTítulo: "
                 + titulo
-                + ", ISBN: "
+                + "\nCódigo: "
+                + codigo
+                + "\nISBN: "
                 + ISBN
-                + ", Editora: "
-                + editora.getRazaoSocial();
+                + "\nEditora: "
+                + editora.getRazaoSocial()
+                + "\nAutores: "
+                + returnAutores()
+                + "\n";
     }
 }

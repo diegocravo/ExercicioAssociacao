@@ -1,5 +1,9 @@
 package Entities;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Autor {
 
     private int id;
@@ -15,5 +19,5 @@ public class Autor {
     public String getNome() {
         return nome;
     }
-
 }
+

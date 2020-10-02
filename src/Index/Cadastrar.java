@@ -13,29 +13,33 @@ public class Cadastrar {
 
         System.out.println("Cadastrar Livro:");
 
-        System.out.println("Digite o código do livro");
-        int codigo = ler.nextInt();
-        ler.nextLine();
+        int codigo = 0;
+        do{
+            try {
+                System.out.println("Digite o código do livro");
+                codigo = ler.nextInt();
+                ler.nextLine();
+            }catch (Exception e){
+                System.out.println("Entrada deve ser numérica");
+                ler.next();
+            }
+        }while (codigo == 0);
+
         System.out.println("Digite o título do livro");
         String titulo = ler.nextLine();
         System.out.println("Digite o código ISBN do livro");
         String ISBN = ler.nextLine();
 
+        Livro.adicionarAutores(new Autor(1, "Joey Tribbiani", "123@gmail.com"));
+        Livro.adicionarAutores(new Autor(2, "Sheldon Coopen", "1212@gmail.com"));
+        Livro.adicionarAutores(new Autor(3, "Phoebe Buffay", "1asdadsa2@gmail.com"));
 
-        Editora editora = new Editora(01, "Editora Diego Cravo", "Diego","8199999-9999" );
+        Editora editora = new Editora(01, "Editora Diego Cravo", "Diego","8199999-9999");
 
         Livro livro = new Livro(codigo, titulo, ISBN, editora);
         Livro.listaLivro.add(livro);
 
-        Autor autor1 = new Autor(1, "Diego", "12@gmail.com");
-        Autor autor2 = new Autor(2, "Rodrigues", "12@gmail.com");
-        Autor autor3 = new Autor(3, "Cravo", "12@gmail.com");
-
-        String nomes[] = {autor1.getNome(), autor2.getNome(), autor3.getNome()};
-
-
-
-        System.out.println(livro + ", Autores: " + nomes[0] + ", " + nomes[1] + ", " + nomes[2]);
+        System.out.println(livro);
 
     }
 }
